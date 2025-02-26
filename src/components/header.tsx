@@ -8,7 +8,7 @@ const Header = () => {
     <header className="container mx-auto px-4 py-8 border-b border-gray-200 dark:border-gray-900">
       <div className="flex justify-between items-center">
         <div>
-          <Link to="/" className="font-medium text-lg lg:text-xl">
+          <Link to="/" className="font-medium text-lg lg:text-2xl">
             WeatherX
           </Link>
         </div>
