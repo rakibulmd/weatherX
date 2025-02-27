@@ -4,6 +4,7 @@ import { useGeoLocation } from "../hooks/useGeoLocation";
 import LoadingSkeleton from "../components/loadingSkeletion";
 import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
 import { useForecastQuery, useReverseGeoCodeQuery, useWeatherQuery } from "../hooks/useWeatherData";
+import CurrentWeather from "../components/ui/currentWeather";
 
 const WeatherDashboard = () => {
   const {
@@ -62,7 +63,7 @@ const WeatherDashboard = () => {
     );
   }
 
-  const locationName = locationQuery.data?.[0]?.name;
+  const locationName = locationQuery.data?.[0];
 
   if (weatherQuery.error || forecastQuery.error) {
     return (
@@ -102,8 +103,17 @@ const WeatherDashboard = () => {
           ></RefreshCw>
         </Button>
       </div>
-      {locationName && <p className="text-gray-500">{locationName}</p>}
-      {/* {current and hourly weather} */}
+
+      <div className="grid gap-6">
+        <div>
+          <CurrentWeather data={weatherQuery.data} locationName={locationName} />
+          <div>Hourly Temp</div>
+        </div>
+        <div>
+          <div>Weather Details</div>
+          <div>Forecast</div>
+        </div>
+      </div>
     </div>
   );
 };
