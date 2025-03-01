@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowUp, Droplets, Wind } from "lucide-react";
-import type { GeocodingResponse, WeatherData } from "../../api/types";
-import { Card, CardContent } from "./card";
+import type { GeocodingResponse, WeatherData } from "../api/types";
+import { Card, CardContent } from "./ui/card";
 
 interface CurrentWeatherProps {
   data: WeatherData;
@@ -18,7 +18,7 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
   return (
     <Card className="overflow-hidden ">
       <CardContent className="p-6">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 items-center">
           <div className="space-y-4">
             <div className="space-y-2">
               <div className="flex items-end space-x-2">
