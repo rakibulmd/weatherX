@@ -46,7 +46,7 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Details</CardTitle>
+        <CardTitle>Weather Details</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid sm:grid-cols-2 gap-4">
