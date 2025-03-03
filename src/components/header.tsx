@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "../context/themeContext";
 import { Moon, Sun } from "lucide-react";
+import CitySearch from "./citySearch";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -12,20 +13,23 @@ const Header = () => {
             WeatherX
           </Link>
         </div>
-        <span
-          className={`${
-            theme === "dark"
-              ? "transition-all rotate-180 inline-block cursor-pointer"
-              : "transition-all rotate-0 inline-block cursor-pointer"
-          }`}
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        >
-          {theme === "dark" ? (
-            <Sun className="h-[1.2rem] w-[1.2rem] text-yellow-500" />
-          ) : (
-            <Moon className="h-[1.2rem] w-[1.2rem] text-blue-500" />
-          )}
-        </span>
+        <div className="flex gap-4 items-center">
+          <CitySearch></CitySearch>
+          <span
+            className={`${
+              theme === "dark"
+                ? "transition-all rotate-180 inline-block cursor-pointer"
+                : "transition-all rotate-0 inline-block cursor-pointer"
+            }`}
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            {theme === "dark" ? (
+              <Sun className="h-[1.2rem] w-[1.2rem] text-yellow-500" />
+            ) : (
+              <Moon className="h-[1.2rem] w-[1.2rem] text-blue-500" />
+            )}
+          </span>
+        </div>
       </div>
     </header>
   );
